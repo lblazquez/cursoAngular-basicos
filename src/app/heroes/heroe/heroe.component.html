@@ -1,0 +1,30 @@
+<h1>{{nombre}}</h1>
+
+<dl>
+    <td>Nombre:</td>
+    <dd>{{ nombre }}</dd>
+
+    <td>Edad:</td>
+    <dd>{{ edad }}</dd>
+
+    <td>Función:</td>
+    <dd>{{ obtenerNombre() }}</dd>
+
+    <td>Capitalizado:</td>
+    <!--<dd>{{ nombre.toUpperCase() }}</dd>-->
+    <dd>{{ nombreCapitalizado }}</dd>
+
+</dl>
+
+<button (click)="cambiarNombre()">
+    Cambiar Héroe
+</button>
+
+<button (click)="cambiarEdad()">
+    Cambiar Edad
+</button>
+
+<!--
+en este ejemplo se ve el funcionamiento de one-way data-binding .. si cambiamos una propiedad sólo se actualizan aquellos elementos del DOM que usan esa propiedad
+se recomienda usar el one-way frente al two-way-data-binding. 
+-->
