@@ -1,0 +1,17 @@
+<h3>Personajes</h3>
+<hr/>
+<!-- <ul>
+    <li>Krillin - 700</li>
+    <li>Goku - 15,000</li>
+    <li>Vegeta - 8,500</li>
+</ul> -->
+<ul *ngIf="personajes.length > 0; else sinPersonajes">
+    <li *ngFor="let p of personajes">
+        {{ p.nombre }} - {{ p.poder | number }}
+        <!-- el pipe hace que se formatee el objeto según se indica -->
+    </li>
+</ul>
+<ng-template #sinPersonajes>
+    <p> Listado vacío </p>
+</ng-template>
+
