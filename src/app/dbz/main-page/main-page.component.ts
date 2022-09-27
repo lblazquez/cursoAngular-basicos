@@ -23,41 +23,11 @@ import { Personaje } from '../interfaces/dbz.interfaces';
 })
 export class MainPageComponent {
 
-    //
-    // primera versión de la clase
-    //   explicación de two-way-bindings
-    //
-    // public nuevo: Personaje =  {
-    //   nombre: 'Trunks',
-    //   poder: 14000
-    // }
-    // agregar( ){
-    //   console.log(this.nuevo);
-    // }
-    // cambiarNombre ( event: any) {
-    //     console.log(event.target.value)
-    // }
+  // valor por defecto
+  public nuevo: Personaje = {
+    nombre: 'Maestro Roshi ',
+    poder: 1000
+  }
 
-    public personajes: Personaje[] = [
-      {
-        nombre:'Goku', poder: 15000
-      },
-      {
-        nombre:'Vegeta', poder: 7500
-      }
-    ];
-
-    public nuevo: Personaje = {
-      nombre: '',
-      poder: 0
-    }
-
-    agregarNuevoPersonaje( p : Personaje) {
-      console.log(p);
-      // si pongo esta instrucción en el código => cuando en el navegador (Chrome o Edge) se llegue
-      // a este punto  => se parará la ejecución y podremos depurar. 
-      //debugger;
-      this.personajes.push(p);
-    }
 
 }

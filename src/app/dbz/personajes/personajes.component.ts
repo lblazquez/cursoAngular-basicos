@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { Personaje } from '../interfaces/dbz.interfaces';
+import { DbzService } from '../services/dbz.service';
 
 @Component({
   selector: 'app-personajes',
@@ -8,14 +9,13 @@ import { Personaje } from '../interfaces/dbz.interfaces';
 })
 export class PersonajesComponent  {
 
-  // para marcar que vamos a recibir esta propiedad "de fuera"
-  @Input() personajes: Personaje [] = [];
+  // getter que devuelve el listado de personajes del Servicio
+  get personajes() {
+    return this.dbzService.personajes;
+  }
 
-  // ----------------------------------------------------------------------
-  // si lo quiero recibir como un alias => hay que poner
-  // @Input('alias') propiedadX: tipo;
-  // y habría que llamar desde fuera como <app-personajes [alias]="personajes"></app-personajes>
-  //
+  // inyectamos el servicio como propiedad privada del objeto
+  constructor (private dbzService: DbzService) {
+  }
 
-  
 }
